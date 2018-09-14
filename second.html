@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue Js Directives</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="assets/js/vue.js"></script>
+
+
+    <style>
+    [v-cloak]{
+        background: red;
+    }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+
+<div id="app">
+
+
+    <h1 v-text="message"></h1>
+
+    <!-- v-while inserts the  html inside tag -->
+    <h1 v-html="intro"></h1>
+
+
+    <!-- v-text render html directly -->
+    <h1 v-text="intro"></h1>
+
+
+    <!-- v-show show the tag if it is true , otherwise display none like style attribute
+        of display none
+       -->
+    <h1 v-show="viewed">you have viewed this page</h1>
+
+
+    <!-- if checks the codition and display the tag if true -->
+    <h1 v-if="ifviewed">you have ifviewed attribute in this page</h1>
+
+
+    <!-- check the condition of if equality -->
+    <h1 v-if="viewed == ifviewed">you have euality of if attribute in this page</h1>
+
+
+
+    <h1 v-if="ifviewed">If condition</h1>
+
+    <!-- check the else statement condition -->
+    <h1 v-else>you have else condition in this page</h1>
+
+
+    <!-- v-pre tag as in html , display as it is -->
+    <h1 v-pre>{{message}}</h1>
+
+
+
+
+    <!-- v-once only render one time -->
+    <h1 v-once>{{ message }}</h1>
+
+
+
+
+    <!-- v-cloak waits until inside the message when vue js completes loading -->
+
+    <!-- waits till the ends -->
+
+    <!-- waits until the vue js loads completely -->
+
+    <h1 v-cloak>{{ message }}</h1>
+
+</div>
+
+
+
+</body>
+
+
+
+<script>
+
+    var app = new Vue({
+
+        el:'#app',
+
+        data:{
+
+            message: 'Hello Vue World',
+            intro:  "Welcome to the Tutorial <small>Its all about vuejs</small>",
+            viewed: true,
+            ifviewed:false
+        }
+
+    });
+
+</script>
+
+
+
+
+</html>
